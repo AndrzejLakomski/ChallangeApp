@@ -1,51 +1,29 @@
 ﻿
 int number = 112333600;
-string numberInString = number.ToString();
-char[] letters = numberInString.ToArray();
+string numberAsString = number.ToString();
+char[] signs = numberAsString.ToArray();
 
-int counter0 = 0;
-int counter1 = 0;
-int counter2 = 0;
-int counter3 = 0;
-int counter4 = 0;
-int counter5 = 0;
-int counter6 = 0;
-int counter7 = 0;
-int counter8 = 0;
-int counter9 = 0;
+List<char> numbers = new List<char>();
 
-foreach (char letter in letters)
+numbers.Add('0');
+numbers.Add('1');
+numbers.Add('2');
+numbers.Add('3');
+numbers.Add('4');
+numbers.Add('5');
+numbers.Add('6');
+numbers.Add('7');
+numbers.Add('8');
+numbers.Add('9');
+
+Console.WriteLine("Sprawdzana liczba to " + number);
+
+foreach (var sign in numbers)
 {
-    if (letter == '0') 
-    { counter0++; }
-    else if (letter == '1')
-    { counter1++; }
-    else if (letter == '2')
-    { counter2++; }
-    else if (letter == '3')
-    { counter3++; }
-    else if (letter == '4')
-    { counter4++; }
-    else if (letter == '5')
-    { counter5++; }
-    else if (letter == '6')
-    { counter6++; }
-    else if (letter == '7')
-    { counter7++; }
-    else if (letter == '8')
-    { counter8++; }
-    else if (letter == '9')
-    { counter9++; }
+    var count = 0;
+    foreach (var number2 in signs)
+    {
+        if (sign == number2) count++;
+    }
+    Console.WriteLine("Cyfra " + sign + " => " + count);
 }
-
-Console.WriteLine("Sprawdzana liczba to " + number );
-Console.WriteLine("Cyfra 0 => " + counter0);
-Console.WriteLine("Cyfra 1 => " + counter1);
-Console.WriteLine("Cyfra 2 => " + counter2);
-Console.WriteLine("Cyfra 3 => " + counter3);
-Console.WriteLine("Cyfra 4 => " + counter4);
-Console.WriteLine("Cyfra 5 => " + counter5);
-Console.WriteLine("Cyfra 6 => " + counter6);
-Console.WriteLine("Cyfra 7 => " + counter7);
-Console.WriteLine("Cyfra 8 => " + counter8);
-Console.WriteLine("Cyfra 9 => " + counter9);

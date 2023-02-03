@@ -1,34 +1,44 @@
 ﻿using ChallengeApp;
 
-User user1 = new User("Alojzy", "Pietruszka", 18);
-User user2 = new User("Baltazar", "Gąbka", 46);
-User user3 = new User("Mieszko", "Pierwszy", 148);
+Employee employee1 = new Employee("Alojzy", "Pietruszka", 18);
+Employee employee2 = new Employee("Baltazar", "Gąbka", 46);
+Employee employee3 = new Employee("Mieszko", "Pierwszy", 82);
 
-user1.AddPoint(1);
-user1.AddPoint(2);
-user1.AddPoint(5);
-user2.AddPoint(6);
-user2.AddPoint(3);
-user2.AddPoint(1);
-user3.AddPoint(21);
-user3.AddPoint(1);
-user3.AddPoint(4);
+employee1.AddPoint(4);
+employee1.AddPoint(2);
+employee1.AddPoint(5);
+employee1.AddPoint(1);
+employee1.AddPoint(3);
 
-var result = user1.Result;
+employee2.AddPoint(10);
+employee2.AddPoint(3);
+employee2.AddPoint(1);
+employee2.AddPoint(9);
+employee2.AddPoint(4);
 
-var result2 = user2.Result;
+employee3.AddPoint(5);
+employee3.AddPoint(1);
+employee3.AddPoint(4);
+employee3.AddPoint(1);
+employee3.AddPoint(9);
 
-var result3 = user3.Result;
-
-if (result > result2)
+List<Employee> Employees = new List<Employee>()
 {
-    Console.WriteLine("Najwyższy zdobyty wynik to " + result + ". Należy do pracownika " + user1.Name + " " + user1.Surname + ", lat " + user1.Age);
-}
-else if (result2 > result3 )
+  employee1, employee2, employee3
+};
+
+int maxResult = -1;
+Employee employeeMaxResult = null;
+
+foreach (var employee in Employees)
+{
+    if (employee.Result > maxResult)
     {
-    Console.WriteLine("Najwyższy zdobyty wynik to " + result2 + ". Należy do pracownika " + user2.Name + " " + user2.Surname + ", lat " + user2.Age);
+        maxResult = employee.Result;
+        employeeMaxResult = employee;
     }
-else
-{ 
-    Console.WriteLine("Najwyższy zdobyty wynik to " + result3 + ". Należy do pracownika " + user3.Name + " " + user3.Surname + ", lat " + user3.Age); 
 }
+ Console.WriteLine("Pracownik z najlepszym wynikiem:");
+Console.WriteLine(employeeMaxResult.Name + " " + employeeMaxResult.Surname + ", lat " + employeeMaxResult.Age);
+Console.WriteLine("Jego wynik to " + employeeMaxResult.Result);
+    
